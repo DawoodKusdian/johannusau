@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/productShowCase.css">
+        <link rel="stylesheet" href="plugins/unslider/unslider-master/dist/css/unslider.css">
+        <link rel="stylesheet" href="plugins/unslider/unslider-master/dist/css/unslider-dots.css">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -24,15 +26,30 @@
         <div class="fullwidth">
 
             <div class="gallery">
-
-                <figure class="item">
-                    <div class="img-wrap"><img src="https://static1.squarespace.com/static/56254d1be4b0808b4bac1b22/563cb6fbe4b0685e3acc89c7/563cb9c4e4b08a8599330c49/1447341838545/opus270.jpg?format=500w" alt="" /></div>
-                    <figcaption class="caption">
-                        <h3>Luminor Marina 1950<br/>3 days automatic ACCIAIO</h3>
-                        <a class="btn-buy" href="#">Buy</a>
-                        <a class="btn-details" href="#">See details</a>
-                    </figcaption>
-                </figure>
+                <div class="productSlider">
+                    <ul>
+                        <li>
+                            <figure class="item">
+                                <div class="img-wrap"><img src="https://static1.squarespace.com/static/56254d1be4b0808b4bac1b22/563cb6fbe4b0685e3acc89c7/563cb9c4e4b08a8599330c49/1447341838545/opus270.jpg?format=500w" alt="" /></div>
+                                <figcaption class="caption">
+                                    <h3>Luminor Marina 1950<br/>3 days automatic ACCIAIO</h3>
+                                    <a class="btn-buy" href="#">Buy</a>
+                                    <a class="btn-details" href="#">See details</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="item">
+                                <div class="img-wrap"><img src="https://www.musicland.com.au/productimages/OPUS_370_FRONT%20(large).jpg" alt="" /></div>
+                                <figcaption class="caption">
+                                    <h3>Luminor Marina 1950<br/>3 days automatic ACCIAIO</h3>
+                                    <a class="btn-buy" href="#">Buy</a>
+                                    <a class="btn-details" href="#">See details</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
 
                 <figure class="item">
                     <div class="img-wrap"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/cl-02.png" alt="" /></div>
@@ -85,5 +102,22 @@
             ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        <script src="plugins/unslider/unslider-master/dist/js/unslider-min.js"></script>
+        <script src="https://cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+        <script src="http://stephband.info/jquery.event.move/js/jquery.event.move.js"></script>
+        <script src="http://stephband.info/jquery.event.swipe/js/jquery.event.swipe.js"></script>
+        <script>
+            jQuery(document).ready(function($) {
+                $('.productSlider').unslider({
+                    autoplay:true,
+                    speed: 500,               //  The speed to animate each slide (in milliseconds)
+                    delay: 3000,              //  The delay between slide animations (in milliseconds)
+                    complete: function() {},  //  A function that gets called after every slide animation
+                    keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+                    dots: true,               //  Display dot navigation
+                    fluid: false              //  Support responsive design. May break non-responsive designs
+                });
+            });
+        </script>
     </body>
 </html>
